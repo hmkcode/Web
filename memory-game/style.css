@@ -1,0 +1,54 @@
+﻿html,body  {
+	background-color:#000;
+	background:#999 url('bg_black.png') repeat;
+	text-align:center;
+	margin-top:20px;
+	
+} 
+h2{
+	color:#fff;
+}
+h3{
+	color:#ccc;
+}
+.container{
+	padding:4px;
+	display:inline-block;
+	background-color:#fff;
+	width:200px;
+	height:200px;
+	border:1px black solid;
+	border: 1px solid rgb(204, 204, 204);
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0px 1px 3px rgb(167, 167, 167); 
+}
+
+
+.shape{
+	border:2px #fff solid; 
+	background: rgb(240, 240, 240);
+	margin:0px;
+	padding:0px;
+	display:inline-block;
+	box-shadow: 2px 2px 2px rgb(136, 136, 136); 
+	margin:2px;
+}
+
+.shape:hover{
+	cursor:pointer;
+}
+.selected{
+	background-color:#4D90FE;
+	
+}
+.wrong{
+	background-color:red;
+	
+}
+
+.square{
+	
+}
+.circle{
+	border-radius:50px;
+}
