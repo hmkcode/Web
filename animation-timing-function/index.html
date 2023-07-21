@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .animate {
+            width: 128px;
+            height: 40px;
+            color: white;
+            font-weight: bold;
+            position: relative;
+            animation-direction: normal;
+            animation-iteration-count: 1;
+            animation-delay: 1000ms;
+            border: 0px solid white;
+        }
+        .forward{
+            animation: moveforward 8s forwards;
+            background-image: url("car.png");
+        }
+        .backward{
+            animation: movebackward 8s forwards;
+            background-image: url("car-rtl.png");
+        }
+       
+        .track{
+            position: relative;
+            width : 728px;
+            height : 40px;
+            background-color: #444444;
+            margin-bottom: 25px;
+
+        }
+        .timing-function{
+            position: absolute;
+            top: -19px;
+            left: 0px;
+            width: 280px;
+            color: #76d1fe;
+            font-family: monospace;
+            background-color: #333;
+            padding: 2px;
+            border-radius: 3px 3px 0px 0px;
+
+
+        }
+        .timing-function span{
+            color: rgb(233, 169, 85);
+        }
+
+        .content {
+            width: 728px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333;
+            color: #76d1fe;
+            font-family: monospace;
+            border-radius: 3px;
+        }
+
+        .linear {
+            animation-timing-function: linear;
+        }
+
+        .ease {
+            animation-timing-function: ease;
+        }
+
+        .ease-in {
+            animation-timing-function: ease-in;
+        }
+
+        .ease-out {
+            animation-timing-function: ease-out;
+        }
+
+        .ease-in-out {
+            animation-timing-function: ease-in-out;
+        }
+
+        .cubic-bezier {
+            animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+        }
+
+        @keyframes moveforward {
+            0% { left: 0px; }
+            100% { left: 600px;}    
+        }
+
+        @keyframes movebackward {
+            0% { left: 600px; }
+            100% { left: 0px;}    
+        }
+      
+    </style>
+
+    <script>
+       document.addEventListener('DOMContentLoaded', () => {
+        // Get the animated element using its class name
+        const animatedElement = document.querySelectorAll('.animate');
+
+        // Add an event listener for the animationend event
+        animatedElement.forEach((element) => {
+            element.addEventListener('animationend', () => {
+                
+                console.log('Animation completed!');
+                element.classList.toggle('forward');               
+                setTimeout(() => {element.classList.toggle('backward');}, 5);
+            });
+        });
+    });
+    </script>
+</head>
+
+<body>
+
+    <div class="content">    
+        <div style="margin-bottom: 40px; display: flex; align-items: center; justify-content: center;">
+            <img src="CSS3_logo.png" alt="CSS Logo" width="64px" height="64px" style="display: inline-block;">
+            <h1 style="display: inline-block; margin-left: 10px;color:#fff">CSS animation-timing-function</h1>
+        </div>
+        
+        
+       
+
+        <div class="track">
+            <code class="timing-function">animation-timing-function: <span>linear;</span></code>
+            <div class="animate linear forward"></div>
+        </div>
+        <div class="track">
+            <div class="animate ease forward"></div>
+            <code class="timing-function">animation-timing-function: <span>ease;</span></code>
+        </div>
+        <div class="track">
+            <div class="animate ease-in forward"></div>
+            <code class="timing-function">animation-timing-function: <span>ease-in;</span></code>
+        </div>
+        <div class="track">
+            <div class="animate ease-out forward"></div>
+            <code class="timing-function">animation-timing-function: <span>ease-out;</span></code>    
+        </div>
+        <div class="track">
+            <div class="animate ease-in-out forward"></div>
+            <code class="timing-function">animation-timing-function: <span>ease-in-out;</span></code>
+        </div>    
+        <div class="track">
+            <div class="animate cubic-bezier forward"></div>
+            <code class="timing-function">animation-timing-function: <span>cubic-bezier;</span></code>
+        </div>
+    </div>
+  
+
+</body>
+
+</html>
