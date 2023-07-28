@@ -1,0 +1,48 @@
+/* styles.css */
+.earthquake {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red; /* Customize the color based on magnitude or depth */
+    animation: pulse 2s infinite; /* Add pulsating animation */
+  }
+
+#map
+{
+    width: 1180px;
+    height: 550px;
+    background-image: url("turkey.png");
+    border-radius: 5px;
+}
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    
+    100% {
+      transform: scale(5); opacity: 0.0 ;
+    }
+  }
+  
+  .ripple {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(243, 20, 0, 0.271); /* Customize the ripple color and transparency */
+    animation: ripple-animation 2s infinite;
+    font-size: 4px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  @keyframes ripple-animation {
+    to {
+      transform: scale(8);
+      opacity: 0.1;
+    }
+  }
