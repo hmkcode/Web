@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 50px;
+    background-color: #ccc;
+}
+.line-container {
+    position: relative;
+    width: 600px;
+    height: 50px; /* Increased height to fit the labels */
+   /* background-color: #efefef; */
+    margin-top: 20px;
+}
+.dashed-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 2px dashed black;
+    transform: translateY(-50%);
+}
+.point {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    border:0px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -8px);
+    user-select: none; /* Prevent text selection */
+    background-color: #3b73e6;
+}
+.label-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-43px) translateY(-100%);
+    user-select: none; /* Prevent text selection */
+    background-color: transparent;
+}
+.label {
+    width: 100px;
+    height: 30px;
+    background-color: #3b73e6;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    margin-bottom: 0px; /* Space between label and point */
+    user-select: none; /* Prevent text selection */
+}
+.line {
+    width: 1px;
+    background-color: blue;
+    height: 50px; /* Adjust height to fit the distance between point and label */
+    user-select: none; /* Prevent text selection */
+}
+.add-point-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}

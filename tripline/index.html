@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draggable End Points with Labels</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <div class="line-container" id="lineContainer">
+        <div class="dashed-line"></div>
+        <div class="point" style="left: 0;" data-index="0">
+            <div class="label-container">
+                <div class="label">POINT A</div>
+                <div class="line"></div>
+            </div>
+        </div>
+        <div class="point" style="left: 100%;" data-index="100">
+            <div class="label-container">
+                <div class="label">POINT B</div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <button class="add-point-button" id="addPointButton">Add Point</button>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const lineContainer = document.getElementById('lineContainer');
+    const addPointButton = document.getElementById('addPointButton');
+
+    document.querySelectorAll('.point').forEach(point => makeDraggable(point));
+
+    addPointButton.addEventListener('click', () => {
+        //createPoint(`POINT ${String.fromCharCode(65 + pointCount)}`, '50%');
+        createPoint(`POINT ${pointCount}`, '50%');        
+    });
+});
+
+    </script>
+    
+</body>
+</html>
